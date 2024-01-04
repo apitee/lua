@@ -23,6 +23,14 @@ Lua 5.4.3  Copyright (C) 1994-2021 Lua.org, PUC-Rio
 >
 ```
 
+
+install the required Lua libraries using Luarocks (if not installed already):
+
+```sh
+luarocks install lyaml
+luarocks install luaposix
+```
+
 clone
 ```bash
 git clone https://github.com/apitee/lua.git
