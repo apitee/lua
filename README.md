@@ -24,7 +24,7 @@ Lua 5.4.3  Copyright (C) 1994-2021 Lua.org, PUC-Rio
 
 clone
 ```bash
-https://github.com/apitee/lua.git
+git clone https://github.com/apitee/lua.git
 ```
 
 ```bash
