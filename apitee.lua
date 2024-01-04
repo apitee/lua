@@ -29,8 +29,22 @@ local function execute_command_list(commands)
 end
 
 -- Main execution function
-local function main()
-    local yaml_content = read_yaml_file('commands.yaml')
+local function main2()
+        -- Get the file path from the command-line argument
+    local yaml_file_path = arg[1]
+    
+    -- Check if the file path was provided
+    if not yaml_file_path then
+        print("Usage: lua your_script.lua <path-to-yaml-file>")
+        os.exit(1)  -- Exit the script with an error code
+    end
+
+    -- Read and parse the YAML file
+    local yaml_string = read_file_content(yaml_file_path)
+    local yaml_data = lyaml.load(yaml_string)
+    
+    -- Process the loaded YAML data as needed
+    local yaml_content = read_yaml_file(yaml_file_path)
     local yaml_table = parse_yaml(yaml_content)
 
     if yaml_table.RUN then
@@ -50,4 +64,36 @@ local function main()
     end
 end
 
-main()
+-- Reads the contents from the specified file path
+local function read_file_content(file_path)
+    local file = io.open(file_path, "r")
+    if not file then
+        error("Cannot read file: " .. file_path)
+    end
+    local content = file:read("*all")
+    file:close()
+    return content
+end
+
+-- Main function where the script starts
+local function main()
+    -- Get the file path from the command-line argument
+    local yaml_file_path = arg[1]
+    
+    -- Check if the file path was provided
+    if not yaml_file_path then
+        print("Usage: lua your_script.lua <path-to-yaml-file>")
+        os.exit(1)  -- Exit the script with an error code
+    end
+
+    -- Read and parse the YAML file
+    local yaml_string = read_file_content(yaml_file_path)
+    local yaml_data = lyaml.load(yaml_string)
+    
+    -- Process the loaded YAML data as needed
+    -- ...
+
+    print("YAML file content:", yaml_data) -- Placeholder for demonstration
+end
+
+main2()
