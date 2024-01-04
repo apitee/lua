@@ -9,6 +9,8 @@ Some examples of Lua’s usage areas: network software, video games, user graphi
 Lua interpreter is written in ANSI C and it is extremely small, both interpreter and source code is only about 1Mb. Lua is considered one of the fastest interpreted languages.
 Checking Lua
 
+## Start
+
 Some distributions already have Lua pre-installed. Open your terminal and type:
 ```bash
 lua
@@ -19,11 +21,14 @@ If the output is be something like:
 Lua 5.4.3  Copyright (C) 1994-2021 Lua.org, PUC-Rio
 >
 
-Congratulations! Lua is already installed on your system and ready to use.
 
-Hint! To exit Lua’s interpreter press Ctrl + D.
-
+clone
+```bash
+https://github.com/apitee/lua.git
+```
 
 ```bash
 lua apitee.lua git.yaml
 ```
+
+Hint! To exit Lua’s interpreter press Ctrl + D.
