@@ -12,15 +12,16 @@ Checking Lua
 ## Start
 
 Some distributions already have Lua pre-installed. Open your terminal and type:
-```bash
+```shell
 lua
 ```
 
 If the output is be something like:
 
+```shell
 Lua 5.4.3  Copyright (C) 1994-2021 Lua.org, PUC-Rio
 >
-
+```
 
 clone
 ```bash
