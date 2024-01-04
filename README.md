@@ -23,12 +23,45 @@ Lua 5.4.3  Copyright (C) 1994-2021 Lua.org, PUC-Rio
 >
 ```
 
+### Install posix
 
 install the required Lua libraries using Luarocks (if not installed already):
 
 ```sh
 luarocks install luaposix
 ```
+
+
+### Install yaml
+
+Depending on your Linux distribution, the installation method for `libyaml` may differ. Here are the commands for some common distributions:
+
+For Ubuntu/Debian-based systems, use `apt-get`:
+
+```bash
+sudo apt-get update
+sudo apt-get install libyaml-dev
+```
+
+For Fedora, use `dnf`:
+
+```bash
+sudo dnf install libyaml-devel
+```
+
+For CentOS/RHEL, use `yum`:
+
+```bash
+sudo yum install libyaml-devel
+```
+
+After installing `libyaml` using the appropriate package manager for your Linux distribution, retry installing `lyaml` with LuaRocks:
+
+```bash
+luarocks install --local lyaml
+```
+
+Don't forget to set up your environment variables using the `eval $(luarocks path --bin)` command so Lua can find your locally installed modules.
 
 
 1. Run the installation command with `sudo` to gain elevated privileges:
